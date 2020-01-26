@@ -1,1 +1,1 @@
-web: gunicorn sajum_family.sajum_family.wsgi
+web: gunicorn --pythonpath sajum_family/ sajum_family.wsgi
