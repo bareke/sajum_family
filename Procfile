@@ -1,0 +1,1 @@
+web: gunicorn sajum_family.sajum_family.wsgi
