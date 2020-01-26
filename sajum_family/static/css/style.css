@@ -1,0 +1,111 @@
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-image: url('https://i.imgur.com/YRe1jWf.jpg');
+}
+
+.header-text-format{
+    padding-top: 20px!important ;
+    font-size: 32px!important;
+    font-weight: 200!important;
+    line-height: 30px!important;
+}
+
+.text-semibold{
+    font-weight: 600!important;
+}
+
+.session-text{
+    font-size: 15px!important;
+}
+
+.session-icon{
+    font-size: 20px!important;
+    padding-right: 6px;
+    margin-right: 5px;
+    border-right: 1px solid #ffffff;
+}
+
+.menu-side-item{
+    background-color: #ffffff!important;
+    margin: 5px 0!important;
+    border-bottom-right-radius: 15px!important;
+    height: 72px!important;
+    width: 84px!important;
+}
+
+.menu-side-mt{
+    margin-top: 80px!important;
+}
+
+.menu-top-item{
+    width: 15vw!important;
+    height: 40px!important;
+    background-color: #BAB9B9!important;
+    border-top-right-radius: 10px!important;
+    border-top-left-radius: 10px!important;   
+}
+
+.menu-top-item.active{
+    background-color: #ffffff!important;
+}
+
+.menu-top-text{
+    font-size: 20px!important;
+    font-weight: 600!important;
+    color: #ffffff!important;
+    line-height: 20px!important;
+    text-align: center!important;
+}
+
+.menu-top-text.active{
+    color: #f29141!important;
+}
+
+
+.container-section{
+    margin-left: 100px!important;
+}
+
+.container-section-border{
+    border-top-left-radius: 20px!important;
+}
+
+.comisaria-text{
+    margin-top: 100px;
+    font-size: 28px !important;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    line-height: 35px;
+}
+
+.border-input{
+    border-radius: 10px!important;
+}
+
+.border-input-icon{
+    border-top-left-radius: 10px!important;
+    border-bottom-left-radius: 10px!important;
+}
+
+.button-grey{
+    font-weight: 600!important;
+    color: #4d4d4d!important;
+    background-color: #BAB9B9;
+}
+
+.button-input-login{
+    color: #BAB9B9 !important;
+    vertical-align: middle !important;
+    background-color: #ffffff !important;
+    border-top-right-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
+    border-left: 0px !important;
+    border-right: 1px solid #ced4da !important;
+    border-top: 1px solid #ced4da !important;
+    border-bottom: 1px solid #ced4da !important;
+}
