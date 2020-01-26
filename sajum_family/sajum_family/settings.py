@@ -25,7 +25,7 @@ SECRET_KEY = '5=drdd6b*c!i=pf-r=7$9-5hl!j6q1#_(m(08gyghe_6vs9d%7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'sajum.herokuapp.com']
+ALLOWED_HOSTS = ['sajum.herokuapp.com']
 
 
 # Application definition
