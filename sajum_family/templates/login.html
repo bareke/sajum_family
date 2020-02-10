@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +17,7 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <!--Imports CSS local-->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
     <!--Font Source Sans-->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap" rel="stylesheet">
@@ -28,9 +30,10 @@
         <div class="row justify-content-center align-items-center" style="margin-top: 150px!important;">
             <div class="col-xs-8 col-sm-6 col-md-4">
                 <!--Logo-->
-                <img class="img-fluid" src="assets/Logo_SAJUM_full.svg">
+                <img class="img-fluid" src="{% static 'assets/Logo_SAJUM_full.svg' %}">
                 <!--Formulario-->
-                <form>
+                <form method="POST">
+                    {% csrf_token %}
                     <div class="form-group mt-4 mb-2">
                         <label class="text-white" for="user">Usuario</label>
                         <input type="text" class="form-control border-input" id="user" placeholder="Usuario">

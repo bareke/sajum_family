@@ -25,7 +25,7 @@ SECRET_KEY = '5=drdd6b*c!i=pf-r=7$9-5hl!j6q1#_(m(08gyghe_6vs9d%7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['sajum.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'sajum.herokuapp.com']
 
 
 # Application definition
@@ -125,3 +125,7 @@ STATIC_URL = '/static/'
 # Location the static files in the base dir of project
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
+
+LOGIN_URL = '/login'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/login'
