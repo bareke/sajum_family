@@ -8,7 +8,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>SAJUM - Dashboard</title>
+  <title>{% block title_page %}{% endblock %}</title>
 
   <!-- Import Google Icon Font -->
   <link rel="stylesheet" href="{% static 'css/material-icons.css' %}">
@@ -20,13 +20,9 @@
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
   <!--Font Source Sans-->
-  <link rel="stylesheet" href="{% static 'css/font-family.css' %}" >
+  <link rel="stylesheet" href="{% static 'css/font-family.css' %}">
 
 </head>
-
-<style>
-
-</style>
 
 <body>
 
@@ -37,8 +33,9 @@
       <img src="{% static 'assets/Logo_SAJUM.svg' %}" height="50" class="d-inline-block align-top float-left mr-2 mt-2">
     </a>
     <!--Navbar-Brand-->
-    <a class="navbar-brand mt-1 ml-2 d-none d-sm-block" href="#">
-      <img src="{% static 'assets/Logo_SAJUM_line.svg' %}" height="100" class="d-inline-block align-top float-left mr-2">
+    <a class="navbar-brand mt-1 ml-2 d-none d-sm-block" href="{% url 'dashboard' %}">
+      <img src="{% static 'assets/Logo_SAJUM_line.svg' %}" height="100"
+        class="d-inline-block align-top float-left mr-2">
       <p class="header-text-format">Comisaría de familia<br><span class="text-semibold">Municipio</span></p>
     </a>
     <!--Session-->
@@ -52,7 +49,7 @@
         <div class="align-middle text-white session-text mt-2">
           <i class="material-icons d-inline-block align-middle session-icon">settings</i>
           <i class="material-icons d-inline-block align-middle session-icon">help</i>
-          <p class=" d-inline-block font-weight-bolder">Cerrar sesión</p>
+          <p class="d-inline-block font-weight-bolder">Cerrar sesión</p>
         </div>
       </div>
     </div>
@@ -62,22 +59,22 @@
   <!-- Sidebar -->
   <div class="float-left menu-side-mt">
     <ul class="nav flex-column">
-      <li class="nav-item menu-side-item">
-        <a class="nav-link active pt-1 pl-2" href="#">
+      <li class="nav-item menu-side-item {% block side-bar-1 %}{% endblock %}">
+        <a class="nav-link active pt-1 pl-2" href="{% url 'profile' %}">
           <img src="{% static 'assets/icons/D-39.png' %}" height="60">
         </a>
       </li>
-      <li class="nav-item menu-side-item">
-        <a class="nav-link pt-1 pl-2" href="#">
+      <li class="nav-item menu-side-item {% block side-bar-2 %}{% endblock %}">
+        <a class="nav-link pt-1 pl-2" href="{% url 'notification' %}">
           <img src="{% static 'assets/icons/E-39.png' %}" height="60">
         </a>
       </li>
-      <li class="nav-item menu-side-item">
+      <li class="nav-item menu-side-item {% block side-bar-3 %}{% endblock %}">
         <a class="nav-link pt-1 pl-2" href="#">
           <img src="{% static 'assets/icons/F-39.png' %}" height="60">
         </a>
       </li>
-      <li class="nav-item menu-side-item">
+      <li class="nav-item menu-side-item {% block side-bar-4 %}{% endblock %}">
         <a class="nav-link pt-1 pl-2" href="#">
           <img src="{% static 'assets/icons/G-39.png' %}" height="60">
         </a>
@@ -88,28 +85,24 @@
   <!-- NavMenu -->
   <div class="mr-3">
     <ul class="nav justify-content-end text-truncate">
-      <li class="nav-item menu-top-item active">
-        <a class="nav-link menu-top-text active" href="#">Inicio</a>
+      <li class="nav-item menu-top-item {% block nav-item-1 %}{% endblock %}">
+        <a class="nav-link menu-top-text {% block nav-link-1 %}{% endblock %}" href="{% url 'dashboard' %}">Inicio</a>
       </li>
-      <li class="nav-item menu-top-item">
-        <a class="nav-link menu-top-text" href="#">Procesos</a>
+      <li class="nav-item menu-top-item {% block nav-item-2 %}{% endblock %}">
+        <a class="nav-link menu-top-text {% block nav-link-2 %}{% endblock %}" href="{% url 'process' %}">Procesos</a>
       </li>
-      <li class="nav-item menu-top-item">
-        <a class="nav-link menu-top-text" href="#">Bitácora</a>
+      <li class="nav-item menu-top-item {% block nav-item-3 %}{% endblock %}">
+        <a class="nav-link menu-top-text {% block nav-link-3 %}{% endblock %}" href="#">Bitácora</a>
       </li>
-      <li class="nav-item menu-top-item">
-        <a class="nav-link menu-top-text" href="#">Reportes</a>
+      <li class="nav-item menu-top-item {% block nav-item-4 %}{% endblock %}">
+        <a class="nav-link menu-top-text {% block nav-link-4 %}{% endblock %}" href="#">Reportes</a>
       </li>
     </ul>
   </div>
 
   <!-- Container-->
-  <div class="ml-100 mr-3" >
-    <div class="container-fluid container-section bg-white p-4">
-      {% block content %}
-      {% endblock %}
-    </div>
-  </div>
+  {% block content %}
+  {% endblock %}
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

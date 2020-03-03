@@ -3,37 +3,53 @@
 {% load static %}
 
 
+
+{% block title_page %} SAJUM - Dashboard {% endblock %}
+
+
+<!-- NavMenu -->
+{% block nav-item-1 %}active{% endblock %}
+{% block nav-link-1 %}active{% endblock %}
+
+
+<!-- Content -->
 {% block content %}
 
-<!--Container Section-->
-<div class="row justify-content-md-center mt-5">
-  <!--Botones Grandes-->
-  <div class="col-md-auto m-3">
-    <button class="btn-orange big">
-      <img src="{% static 'assets/icons/a-39.png' %}" height="90">
-      <p>Medidas de Atención</p>
-    </button>
-  </div>
+<div class="ml-100 mr-3">
+  <div class="container-fluid container-section bg-white p-4">
 
-  <div class="col-md-auto m-3">
-    <button class="btn-orange big">
-      <img src="{% static 'assets/icons/B-39.png' %}" height="90">
-      <p>Mecanismos de Prevención</p>
-    </button>
-  </div>
+    <!--Container Section-->
+    <div class="row justify-content-md-center mt-5">
+      <!--Botones Grandes-->
+      <div class="col-md-auto m-3">
+        <button class="btn-orange big">
+          <img src="{% static 'assets/icons/a-39.png' %}" height="90">
+          <p>Medidas de Atención</p>
+        </button>
+      </div>
 
-  <div class="col-md-auto m-3">
-    <button class="btn-orange big">
-      <img src="{% static 'assets/icons/C-39.png' %}" height="90">
-      <p>Equipo Interdisciplinario</p>
-    </button>
-  </div>
-</div>
+      <div class="col-md-auto m-3">
+        <button class="btn-orange big">
+          <img src="{% static 'assets/icons/B-39.png' %}" height="90">
+          <p>Mecanismos de Prevención</p>
+        </button>
+      </div>
 
-<div class="row justify-content-md-center mt-4">
-  <!-- 16:9 aspect ratio -->
-  <div class="embed-responsive embed-responsive-16by9 mb-5" style="max-width:500px !important;">
-    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/kvO_nHnvPtQ"></iframe>
+      <div class="col-md-auto m-3">
+        <button class="btn-orange big" onclick="location.href='{% url 'officers'%}';">
+          <img src="{% static 'assets/icons/C-39.png' %}" height="90">
+          <p>Equipo Interdisciplinario</p>
+        </button>
+      </div>
+    </div>
+
+    <div class="row justify-content-md-center mt-4">
+      <!-- 16:9 aspect ratio -->
+      <div class="embed-responsive embed-responsive-16by9 mb-5" style="max-width:500px !important;">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/kvO_nHnvPtQ"></iframe>
+      </div>
+    </div>
+
   </div>
 </div>
 

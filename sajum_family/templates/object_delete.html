@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block title_page %} Eliminar registro {% endblock %}
+
+{% block content %}
+
+<!-- Container-->
+<div class="ml-100 mr-3">
+  <div class="container-fluid container-section bg-white p-5">
+    <!--Parte Superior-->
+    <div class="row">
+      <!--Formulario Busqueda , Ordenar-->
+      <div class="col-md-12">
+        <form method="post">
+          {% csrf_token %}
+          <p>¿Está seguro de eliminar a {{ object|capfirst }}?</p>
+          <a class="btn btn-cancelar transparent my-2" href="{% url 'officers' %}">Cancelar</a>
+          <button class="btn btn-orange normal100 my-2 mr-4">Eliminar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

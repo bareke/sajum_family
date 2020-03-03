@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block title_page %} Nuevo funcionario {% endblock %}
+
+{% block content %}
+
+<!-- Container-->
+<div class="ml-100 mr-3">
+  <div class="container-fluid container-section bg-white p-5">
+    <!-- Titulo de la seccion-->
+    <div class="row">
+      <div class="col">
+        <h2 class="title-section d-inline align-top">Creación de un nuevo funcionario</h2>
+        <div class="d-md-inline-block">
+
+        </div>
+        <div class="title-section-line"></div>
+      </div>
+    </div>
+
+    <!-- Contenido -->
+    <div class="row mt-4">
+      <!--Seccion-->
+      <div class="col-md-10 pr-0">
+        <!--Titulo del desplegable-->
+        <div class="collapse-title text-truncate">
+          <h1 class="font-size-20 text-semibold">Datos del funcionario</h1>
+          <div class="collapse-icon">
+            <span class="collapse-icon-texto">-</span>
+          </div>
+        </div>
+        <div class="collapse-container">
+
+          <!--Form-->
+          <div class="mt-4">
+            <form class="form-exp px-3 mt-2" action="" method="post">
+
+              {% csrf_token %}
+
+              <div class="form-group row">
+                <label for="primer_nombre" class="col-sm-auto col-form-label px-0 text-center">
+                  {{ form.name_1.label }}
+                </label>
+                <div class="col-sm-4 px-1">
+                  {{ form.name_1 }}
+                </div>
+                <label for="segundo_nombre" class="col-sm-auto col-form-label px-0 text-center">
+                  {{ form.name_2.label }}
+                </label>
+                <div class="col-sm px-1">
+                  {{ form.name_2 }}
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="primer_nombre" class="col-sm-auto col-form-label px-0 text-center">
+                  {{ form.lastname_1.label }}
+                </label>
+                <div class="col-sm-4 px-1">
+                  {{ form.lastname_1 }}
+                </div>
+                <label for="segundo_nombre" class="col-sm-auto col-form-label px-0 text-center">
+                  {{ form.lastname_2.label }}
+                </label>
+                <div class="col-sm px-1">
+                  {{ form.lastname_2 }}
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="primer_nombre" class="col-sm-auto col-form-label px-0 text-center">
+                  {{ form.email.label }}
+                </label>
+                <div class="col-sm-4 px-1">
+                  {{ form.email }}
+                </div>
+                <label for="segundo_nombre" class="col-sm-auto col-form-label px-0 text-center">
+                  {{ form.profession.label }}
+                </label>
+                <div class="col-sm px-1">
+                  {{ form.profession }}
+                </div>
+                <label for="primer_nombre" class="col-sm-auto col-form-label px-0 text-center">
+                  {{ form.position.label }}
+                </label>
+                <div class="col-sm px-1">
+                  {{ form.position }}
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="primer_nombre" class="col-sm-auto col-form-label px-0 text-center">
+                  {{ form.vereda.label }}
+                </label>
+                <div class="col-sm px-1">
+                  {{ form.vereda }}
+                </div>
+                <label for="primer_nombre" class="col-sm-auto col-form-label px-0 text-center">
+                  {{ form.municipality.label }}
+                </label>
+                <div class="col-sm px-1">
+                  {{ form.municipality }}
+                </div>
+              </div>
+
+              <!--Botones inferiores-->
+              <div class="bg-white text-right mt-60">
+                <button class="btn btn-cancelar transparent my-2"
+                  onclick="location.href='{% url 'officers'%}';">Cancelar</button>
+                <button class="btn btn-orange normal100 my-2 mr-4">Guardar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="align-middle mt-4">
+          <!--Busqueda-->
+          <div class="form-group row mb-2">
+            <label for="buscar" class="col-sm-auto col-form-label pt-0 pr-0">
+              <!--Icono Busqueda-->
+              <i class="material-icons icon-size-30 text-orange">search</i>
+            </label>
+            <h2 class="font-size-20 text-orange">Nuevo Formulario</h2>
+            <div class="col-sm">
+              <select class="form-control form-control-sm" id="nuevo_formulario"></select>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

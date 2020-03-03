@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block title_page %} Nuevo funcionario {% endblock %}
+
+{% block content %}
+
+<!-- Container-->
+<div class="ml-100 mr-3">
+  <div class="container-fluid container-section bg-white p-5">
+    <!-- Titulo de la seccion-->
+    <div class="row">
+      <div class="col">
+        <h2 class="title-section d-inline align-top">Expediente #</h2>
+        <div class="d-md-inline-block">
+          <!--Tabla para numeros del expediente-->
+          <div class="table-responsive">
+            <table class="table table-borderless table-sm numero-expediente">
+              <tbody>
+                <tr>
+                  <!--Numeros-->
+                  <td class="title-section">12</td>
+                  <td class="title-section">123</td>
+                  <td class="title-section">12</td>
+                  <td class="title-section">12</td>
+                  <td class="title-section">12</td>
+                  <td class="title-section">1234</td>
+                  <td class="title-section">12345</td>
+                </tr>
+                <tr>
+                  <!--Titulo de los numeros-->
+                  <td class="numero-expediente-subtexto">DEPTO.</td>
+                  <td class="numero-expediente-subtexto">MPIO.</td>
+                  <td class="numero-expediente-subtexto">CO.</td>
+                  <td class="numero-expediente-subtexto">VDA.</td>
+                  <td class="numero-expediente-subtexto">INST.</td>
+                  <td class="numero-expediente-subtexto">AÑO</td>
+                  <td class="numero-expediente-subtexto">CONSECUTIVO</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="title-section-line"></div>
+      </div>
+    </div>
+
+    <!-- Contenido -->
+    <div class="row mt-4">
+      <!--Seccion-->
+      <div class="col-md-10 pr-0">
+        <!--Titulo del desplegable-->
+        <div class="collapse-title text-truncate">
+          <h1 class="font-size-20 text-semibold">Recepción de la denuncia</h1>
+          <div class="collapse-icon">
+            <span class="collapse-icon-texto">-</span>
+          </div>
+        </div>
+        <div class="collapse-container">
+          <!--Wizard-->
+          <div class="row">
+            <div class="col-md-3 pr-2 pl-2">
+              <a href="#" class="text-truncate wizard-step">1. Datos generales</a>
+            </div>
+            <div class="col-md-3 pr-2 pl-2">
+              <a href="{% url 'whistleblower-add' %}" class="text-truncate wizard-step active">2. Datos denunciante</a>
+            </div>
+            <div class="col-md-3 pr-2 pl-2">
+              <a href="{% url 'victim-add' %}" class="text-truncate wizard-step">3. Datos víctima</a>
+            </div>
+            <div class="col-md-3 pr-2 pl-2">
+              <a href="{% url 'hostess-add' %}" class="text-truncate wizard-step">4. Datos acudiente</a>
+            </div>
+            <div class="col-md-3 pr-2 pl-2">
+              <a href="{% url 'denounced-add' %}" class="text-truncate wizard-step">5. Datos denunciado</a>
+            </div>
+            <div class="col-md-3 pr-2 pl-2">
+              <a href="{% url 'fact-add' %}" class="text-truncate wizard-step">6. Narración hechos</a>
+            </div>
+            <div class="col-md-3 pr-2 pl-2">
+              <a href="#" class="text-truncate wizard-step">7. Actuación comisaría</a>
+            </div>
+          </div>
+          <!--Form-->
+          <div class="mt-4">
+            <h1 class="text-orange text-bold font-size-18">Datos del Denunciante/Solicitante</h1>
+            <form class="form-exp px-3 mt-2">
+              {% csrf_token %}
+
+              {{ form.as_table }}
+
+              <!--Botones inferiores-->
+              <div class="bg-white text-right mt-60">
+                <button class="btn btn-cancelar transparent my-2"
+                  onclick="location.href='{% url 'process' %}';">Cancelar</button>
+                <button class="btn btn-orange normal100 my-2 mr-4">Guardar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="align-middle mt-4">
+          <!--Busqueda-->
+          <div class="form-group row mb-2">
+            <label for="buscar" class="col-sm-auto col-form-label pt-0 pr-0">
+              <!--Icono Busqueda-->
+              <i class="material-icons icon-size-30 text-orange">search</i>
+            </label>
+            <h2 class="font-size-20 text-orange">Nuevo Formulario</h2>
+            <div class="col-sm">
+              <select class="form-control form-control-sm" id="nuevo_formulario"></select>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!--Menu lateral izquierdo-->
+      <div class="col-md-2 p-0 mt-2">
+        <div class="px-3 mb-2">
+          <button type="button" class="btn btn-gray-small btn-block text-truncate ">Imprimir</button>
+          <button type="button" class="btn btn-gray-small btn-block text-truncate">Adjuntar</button>
+          <button type="button" class="btn btn-gray-small btn-block text-truncate">Programar</button>
+          <button type="button" class="btn btn-gray-small btn-block text-truncate">Generar informe</button>
+          <button type="button" class="btn btn-gray-small btn-block text-truncate">Archivar</button>
+        </div>
+        <button type="button" class="btn btn-orange medium btn-block text-truncate">Generar documento</button>
+        <div class="text-center">
+          <button type="button" class="btn btn-orange normal text-truncate mt-2" style="min-width: 40px;">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block title_page %} Listado de funcionarios {% endblock %}
+
+{% block content %}
+
+<!-- Container-->
+<div class="ml-100 mr-3">
+  <div class="container-fluid container-section bg-white p-5">
+    <!-- Titulo de la seccion-->
+    <div class="row">
+      <div class="col">
+        <h2 class="title-section d-inline align-top">Equipo Interdisciplinario</h2>
+        <div class="d-md-inline-block">
+
+        </div>
+        <div class="title-section-line"></div>
+      </div>
+    </div>
+
+    <!--Parte Superior-->
+    <div class="row">
+      <!--Formulario Busqueda , Ordenar-->
+      <div class="col-md-9">
+        <input class="btn-orange big-bottom-radius mb-4" type="button" onclick="location.href='{% url 'officer-add'%}';"
+          value="Nuevo funcionario" />
+        <!--Busqueda-->
+        <form>
+          <div class="form-group row mb-2">
+            <label for="buscar" class="col-sm-auto col-form-label pt-0 pr-0">
+              <!--Icono Busqueda-->
+              <i class="material-icons icon-size-48 text-orange">search</i>
+            </label>
+            <div class="col-sm mt-2">
+              <input type="text" class="form-control form-control-sm" id="buscar">
+            </div>
+          </div>
+          <!--Ordenar-->
+          <div class="form-group row">
+            <label for="ordernar" class="col-sm-auto col-form-label text-gray-dark font-size-15 text-semibold">Ordenar
+              por</label>
+            <div class="col-sm">
+              <select class="form-control form-control-sm" id="ordenar">
+                <option></option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+    <!--Tabla Principal-->
+    <div class="row">
+      <div class="table-responsive">
+        <table class="table table-sm">
+          <thead class="text-orange font-size-18">
+            <tr>
+              <th scope="col">Número</th>
+              <th scope="col">Nombres</th>
+              <th scope="col">Apellidos</th>
+              <th scope="col">Correo</th>
+              <th scope="col">Profesión</th>
+              <th scope="col">Posición</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-dark">
+            {% for object in object_list %}
+            <tr>
+              <td>{{ forloop.counter }}</td>
+              <td>{{ object.name_1|capfirst }} {{ object.name_2|capfirst }} </td>
+              <td>{{ object.lastname_1|capfirst }} {{ object.lastname_2|capfirst }} </td>
+              <td>{{ object.email|capfirst }}</td>
+              <td>{{ object.profession|capfirst }}</td>
+              <td>{{ object.position|capfirst }}</td>
+              <td>
+                <a href="{% url 'officer-detail' object.pk %}">
+                  <i class="material-icons icon-size-18">remove_red_eye</i>
+                </a>
+                <a href="{% url 'officer-delete' object.pk %}">
+                  <i class="material-icons icon-size-18">delete</i>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

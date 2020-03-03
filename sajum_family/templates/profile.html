@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+
+<!-- Sidebar -->
+{% block side-bar-1 %}active top{% endblock %}
+
+
+<!-- Container-->
+{% block content %}
+
+<div class="ml-100 mr-3">
+  <div class="container-fluid container-section bg-white p-5">
+
+    <!-- Titulo de la seccion-->
+    <div class="row">
+      <div class="col">
+        <h2 class="title-section d-inline">Perfil</h2>
+        <div class="float-right">
+          <!--Icono en la parte derecha-->
+          <i class="material-icons-outlined d-inline icon-size-30 text-gray">create</i>
+        </div>
+        <div class="title-section-line"></div>
+      </div>
+    </div>
+    <!--Contenido-->
+    <div class="row mt-5">
+      <!--Imagen de perfil-->
+      <div class="col-md-auto ml-5">
+        <img class="img-fluid" src="{% static 'assets/foto_perfil.PNG' %}" style="max-height: 300px !important;">
+      </div>
+      <div class="col mt-140">
+        <!--Datos de perfil-->
+        <div class="ml-2">
+          <h1 class="font-weight-bold text-orange mb-0 font-size-20">NOMBRE NOMBRE APELLIDO
+            APELLIDO</h1>
+          <h2 class="text-orange font-size-15">CARGO DEL FUNCIONARIO</h2>
+        </div>
+        <!--Tabla con los datos del perfil-->
+        <div class="table-responsive">
+          <table class="table table-borderless table-info-perfil table-sm">
+            <tbody>
+              <tr>
+                <td>Documento:</td>
+                <td>1061000000</td>
+              </tr>
+              <tr>
+                <td>Correo institucional:</td>
+                <td>miinstitucion@email.com</td>
+              </tr>
+              <tr>
+                <td>Correo personal:</td>
+                <td>micorreo@email.com</td>
+              </tr>
+              <tr>
+                <td>Teléfono:</td>
+                <td>+57 300 000 0000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!--Botones-->
+        <div class="row">
+          <div class="col">
+            <button class="btn-orange normal m-2">Importar hoja de vida</button>
+            <button class="btn-orange normal m-2">Ver hoja de vida</button>
+            <button class="btn-orange normal m-2">Ver actividad</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

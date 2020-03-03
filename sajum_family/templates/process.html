@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+<!-- NavMenu -->
+{% block nav-item-2 %}active{% endblock %}
+{% block nav-link-2 %}active{% endblock %}
+
+
+<!-- Content -->
+{% block content %}
+
+<div class="ml-100 mr-3">
+  <div class="container-fluid container-section bg-white p-5">
+
+    <!--Parte Superior-->
+    <div class="row">
+
+      <!--Formulario Busqueda , Ordenar-->
+      <div class="col-md-9">
+
+        <button class="btn-orange big-bottom-radius mb-4" onclick="location.href='{% url 'whistleblower-add'%}';">Nuevo proceso</button class="btn-orange">
+
+        <!--Busqueda-->
+        <form>
+          <div class="form-group row mb-2">
+            <label for="buscar" class="col-sm-auto col-form-label pt-0 pr-0">
+
+              <!--Icono Busqueda-->
+              <i class="material-icons icon-size-48 text-orange">search</i>
+            </label>
+            <div class="col-sm mt-2">
+              <input type="text" class="form-control form-control-sm" id="buscar">
+            </div>
+          </div>
+
+          <!--Ordenar-->
+          <div class="form-group row">
+            <label for="ordernar" class="col-sm-auto col-form-label text-gray-dark font-size-15 text-semibold">Ordenar
+              por</label>
+            <div class="col-sm">
+              <select class="form-control form-control-sm" id="ordenar">
+                <option></option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!--Resumen de Solicitudes-->
+      <div class="col-md-3">
+        <div class="resumen-box text-center">
+          <p class="resumen-box-text-big">500</h1>
+            <p class="resumen-box-text-medium">PROCESOS</h5>
+              <div class="table-responsive-sm bg-white">
+
+                <!--Tabla de Datos-->
+                <table class="table table-borderless text-gray-dark">
+                  <tbody>
+                    <tr>
+                      <td class="p-1">
+                        <div class="squared-fill red"></div>123
+                      </td>
+                      <td class="p-1">
+                        <div class="squared-fill yellow"></div>70
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="p-1">
+                        <div class="squared-fill orange"></div>207
+                      </td>
+                      <td class="p-1">
+                        <div class="squared-fill white"></div>100
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Tabla Principal-->
+    <div class="row">
+      <div class="col-md-9">
+        <div class="table-responsive">
+          <table class="table table-sm table-borderless">
+            <thead class="text-orange font-size-18">
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">N° de radicación</th>
+                <th scope="col">Fecha recepción</th>
+                <th scope="col">Víctima</th>
+                <th scope="col">Estado</th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-dark">
+              <tr>
+                <td>
+                  <div class="squared-fill red"></div>
+                </td>
+                <td>1-2345-67</td>
+                <td>01-01-2019</td>
+                <td>Apellido Apellido Nombre</td>
+                <td>Investigación</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="squared-fill orange"></div>
+                </td>
+                <td>1-2345-67</td>
+                <td>01-01-2019</td>
+                <td>Apellido Apellido Nombre</td>
+                <td>Suspención</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="squared-fill orange"></div>
+                </td>
+                <td>1-2345-67</td>
+                <td>01-01-2019</td>
+                <td>Apellido Apellido Nombre</td>
+                <td>Audiencia</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="squared-fill yellow"></div>
+                </td>
+                <td>1-2345-67</td>
+                <td>01-01-2019</td>
+                <td>Apellido Apellido Nombre</td>
+                <td>Audiencia</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="squared-fill white"></div>
+                </td>
+                <td>1-2345-67</td>
+                <td>01-01-2019</td>
+                <td>Apellido Apellido Nombre</td>
+                <td class="text-danger">Suspendido</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="squared-fill white"></div>
+                </td>
+                <td>1-2345-67</td>
+                <td>01-01-2019</td>
+                <td>Apellido Apellido Nombre</td>
+                <td class="text-danger">Resuelto</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

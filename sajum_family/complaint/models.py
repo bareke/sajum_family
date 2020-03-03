@@ -278,14 +278,14 @@ class Fact(models.Model):
 class Officer(Person):
     profession = models.CharField(max_length=45)
     position = models.CharField(max_length=45)
-    vereda = models.OneToOneField(
+    vereda = models.ForeignKey(
         'Vereda',
-        related_name='officer',
+        related_name='officers',
         on_delete=models.CASCADE
     )
-    municipality = models.OneToOneField(
+    municipality = models.ForeignKey(
         'Municipality',
-        related_name='officer',
+        related_name='officers',
         on_delete=models.CASCADE
     )
 
@@ -298,7 +298,7 @@ class Citizen(Person):
     document_type = models.CharField(max_length=45, choices=DOCUMENT_TYPE)
     identification = models.IntegerField()
     date_birth = models.DateField()
-    health = models.CharField(max_length=45, choices=DOCUMENT_TYPE)
+    health = models.CharField(max_length=45, choices=HEALTH)
     eps = models.BooleanField(default=False)
     occupation = models.CharField(max_length=45)
     gender = models.CharField(max_length=45, choices=DOCUMENT_TYPE)
@@ -310,19 +310,19 @@ class Citizen(Person):
     head_family = models.BooleanField(blank=True, null=True)
     pregnant = models.BooleanField(blank=True, null=True)
 
-    department_expedition = models.OneToOneField(
+    department_expedition = models.ForeignKey(
         'Department',
-        related_name='citizen',
+        related_name='citizens',
         on_delete=models.CASCADE
     )
-    municipality = models.OneToOneField(
+    municipality = models.ForeignKey(
         'Municipality',
-        related_name='citizen',
+        related_name='citizens',
         on_delete=models.CASCADE
     )
-    vereda = models.OneToOneField(
+    vereda = models.ForeignKey(
         'Vereda',
-        related_name='citizen',
+        related_name='citizens',
         on_delete=models.CASCADE
     )
 

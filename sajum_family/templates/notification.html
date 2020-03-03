@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+<!-- Sidebar -->
+{% block side-bar-2 %}active middle{% endblock %}
+
+<!-- Container-->
+{% block content %}
+<div class="ml-100 mr-3">
+  <div class="container-fluid container-section bg-white p-5">
+    <!--Parte Superior-->
+    <div class="row">
+      <!--Formulario Busqueda , Ordenar-->
+      <div class="col-md-9 mt-4">
+        <form>
+          <!--Busqueda-->
+          <div class="form-group row mb-2">
+            <label for="buscar" class="col-sm-auto col-form-label pt-0 pr-0">
+              <!--Icono Busqueda-->
+              <i class="material-icons icon-size-36 text-orange">search</i>
+            </label>
+            <div class="col-sm">
+              <input type="text" class="form-control form-control-sm" id="buscar">
+            </div>
+          </div>
+          <!--Ordenar-->
+          <div class="form-group row">
+            <label for="ordernar" class="col-sm-auto col-form-label text-gray-dark font-size-15 text-semibold">Ordenar
+              por</label>
+            <div class="col-sm">
+              <select class="form-control form-control-sm" id="ordenar">
+                <option></option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!--Resumen de Solicitudes-->
+      <div class="col-md-3">
+        <div class="resumen-box text-center">
+          <p class="resumen-box-text-big">5</h1>
+            <p class="resumen-box-text-medium">SOLICITUDES</h5>
+              <div class="table-responsive-sm bg-white">
+                <!--Tabla de Datos-->
+                <table class="table table-bordered text-gray-dark">
+                  <tbody>
+                    <tr>
+                      <td class="text-semibold p-1">3</td>
+                      <td class="text-left p-1">No leídas</td>
+                    </tr>
+                    <tr>
+                      <td class="text-semibold p-1">2</td>
+                      <td class="text-left p-1">Leidas</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Tabla Principal-->
+    <div class="row">
+      <div class="table-responsive">
+        <table class="table table-sm">
+          <thead class="text-orange font-size-18">
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Fecha solicitud</th>
+              <th scope="col">Expediente</th>
+              <th scope="col">Víctima</th>
+              <th scope="col">Estado</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-dark">
+            <tr>
+              <!--Checkbox y Favorito-->
+              <td>
+                <div class="d-inline-flex">
+                  <div class="checkbox-table">
+                    <input type="checkbox">
+                  </div>
+                  <i class="material-icons">star_border</i>
+                </div>
+              </td>
+              <!--Aviso de Nuevo-->
+              <td>01-01-2019<span class="badge-new">NUEVO</span></td>
+              <td>12345678901234567890</td>
+              <td>Apellido Apellido Nombre</td>
+              <td>Investigación</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="d-inline-flex">
+                  <div class="checkbox-table">
+                    <input type="checkbox">
+                  </div>
+                  <i class="material-icons">star_border</i>
+                </div>
+              </td>
+              <td>01-01-2019<span class="badge-new">NUEVO</span></td>
+              <td>12345678901234567890</td>
+              <td>Apellido Apellido Nombre</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="d-inline-flex">
+                  <div class="checkbox-table">
+                    <input type="checkbox">
+                  </div>
+                  <i class="material-icons text-warning">star</i>
+                </div>
+              </td>
+              <td>01-01-2019<span class="badge-new">NUEVO</span></td>
+              <td>12345678901234567890</td>
+              <td>Apellido Apellido Nombre</td>
+              <td>-</td>
+            </tr>
+            <!--Fila Leida-->
+            <tr class="bg-row-read">
+              <td>
+                <div class="d-inline-flex">
+                  <div class="checkbox-table">
+                    <input type="checkbox">
+                  </div>
+                  <i class="material-icons">star_border</i>
+                </div>
+              </td>
+              <td>01-01-2019</td>
+              <td>12345678901234567890</td>
+              <td>Apellido Apellido Nombre</td>
+              <td>-</td>
+            </tr>
+            <tr class="bg-row-read">
+              <td>
+                <div class="d-inline-flex">
+                  <div class="checkbox-table">
+                    <input type="checkbox">
+                  </div>
+                  <i class="material-icons">star_border</i>
+                </div>
+              </td>
+              <td>01-01-2019</td>
+              <td>12345678901234567890</td>
+              <td>Apellido Apellido Nombre</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
